@@ -77,7 +77,7 @@ const translations = {
         contact: {
             title: 'Kontaktirajte nas',
             subtitle: 'Zatražite procjenu ili savjet!',
-            phone: '+385 97 7576180',
+            phone: '+385 99 757 6180',
             email: 'elektroprointernational@gmail.com',
             location: 'Zagreb, radimo po cijeloj Hrvatskoj i EU',
             cta: 'Kontaktirajte ElektroPro International danas!'
@@ -178,7 +178,7 @@ const translations = {
         contact: {
             title: 'Contact us',
             subtitle: 'Request an assessment or advice!',
-            phone: '+385 97 7576180',
+            phone: '+385 99 757 6180',
             email: 'elektroprointernational@gmail.com',
             location: 'Zagreb, we work throughout Croatia and EU',
             cta: 'Contact ElektroPro International today!'

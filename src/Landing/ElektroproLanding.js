@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import ElektroProLogo from '../Components/Logo';
 import translations from '../Translations/Translations';
 
@@ -9,25 +9,30 @@ const ElektroProLanding = () => {
     const currentContent = translations[language];
 
     return (
-        <div className="min-h-screen bg-white" style={{ fontFamily: 'Barlow, sans-serif' }}>
+        <div className="min-h-screen bg-white" style={{fontFamily: 'Barlow, sans-serif'}}>
             {/* Google Fonts Import */}
-            <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+            <link
+                href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+                rel="stylesheet"/>
 
             {/* Navigation */}
             <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between items-center h-16">
                         <div className="flex items-center">
-                            <ElektroProLogo theme="light" variant="full" size="h-8" />
+                            <ElektroProLogo theme="light" variant="full" size="h-8"/>
                         </div>
                         <div className="hidden md:flex items-center space-x-8">
-                            <a href="#services" className="text-gray-700 hover:text-orange-500 transition-colors font-medium">
+                            <a href="#services"
+                               className="text-gray-700 hover:text-orange-500 transition-colors font-medium">
                                 {currentContent.nav.services}
                             </a>
-                            <a href="#about" className="text-gray-700 hover:text-orange-500 transition-colors font-medium">
+                            <a href="#about"
+                               className="text-gray-700 hover:text-orange-500 transition-colors font-medium">
                                 {currentContent.nav.about}
                             </a>
-                            <a href="#contact" className="text-gray-700 hover:text-orange-500 transition-colors font-medium">
+                            <a href="#contact"
+                               className="text-gray-700 hover:text-orange-500 transition-colors font-medium">
                                 {currentContent.nav.contact}
                             </a>
                             <div className="flex items-center space-x-2">
@@ -81,14 +86,13 @@ const ElektroProLanding = () => {
                             <p className="text-xl lg:text-2xl mb-8 font-light" style={{color: '#1a0e1c'}}>
                                 {currentContent.hero.subtitle}
                             </p>
-                            <a href={`mailto:elektroprointernational@gmail.com?subject=${currentContent.email.inquiry.subject}&body=${currentContent.email.inquiry.body}`}>
-                                <button
-                                    className="px-8 py-4 rounded-xl text-white font-medium text-lg transition-all transform hover:scale-105 hover:shadow-lg"
-                                    style={{backgroundColor: '#f14e13'}}
-                                >
-                                    {currentContent.hero.cta}
-                                </button>
-                            </a>
+                            <button
+                                onClick={() => window.location.href = `mailto:elektroprointernational@gmail.com?subject=${currentContent.email.inquiry.subject}&body=${currentContent.email.inquiry.body}`}
+                                className="px-8 py-4 rounded-xl text-white font-medium text-lg transition-all transform hover:scale-105 hover:shadow-lg"
+                                style={{backgroundColor: '#f14e13'}}
+                            >
+                                {currentContent.hero.cta}
+                            </button>
                         </div>
                         <div className="relative overflow-hidden">
                             <img
@@ -104,16 +108,18 @@ const ElektroProLanding = () => {
             {/* Why Choose Us */}
             <section className="py-20" style={{backgroundColor: '#f5ece5'}}>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 className="text-4xl lg:text-5xl font-bold text-center mb-16" style={{ color: '#1a0e1c' }}>
+                    <h2 className="text-4xl lg:text-5xl font-bold text-center mb-16" style={{color: '#1a0e1c'}}>
                         {currentContent.why.title}
                     </h2>
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {currentContent.why.items.map((item, index) => (
-                            <div key={index} className="text-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                                <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style={{ backgroundColor: '#f14e13' }}>
+                            <div key={index}
+                                 className="text-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                                <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center"
+                                     style={{backgroundColor: '#f14e13'}}>
                                     <span className="text-2xl text-white">⚡</span>
                                 </div>
-                                <p className="font-medium" style={{ color: '#1a0e1c' }}>{item}</p>
+                                <p className="font-medium" style={{color: '#1a0e1c'}}>{item}</p>
                             </div>
                         ))}
                     </div>
@@ -123,16 +129,19 @@ const ElektroProLanding = () => {
             {/* Services */}
             <section id="services" className="py-20">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <h2 className="text-4xl lg:text-5xl font-bold text-center mb-16" style={{ color: '#1a0e1c' }}>
+                    <h2 className="text-4xl lg:text-5xl font-bold text-center mb-16" style={{color: '#1a0e1c'}}>
                         {currentContent.services.title}
                     </h2>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {currentContent.services.items.map((service, index) => (
-                            <div key={index} className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow border-t-4" style={{ borderTopColor: '#f14e13' }}>
-                                <div className="w-12 h-12 mb-6 rounded-lg flex items-center justify-center" style={{ backgroundColor: '#f14e13' }}>
+                            <div key={index}
+                                 className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow border-t-4"
+                                 style={{borderTopColor: '#f14e13'}}>
+                                <div className="w-12 h-12 mb-6 rounded-lg flex items-center justify-center"
+                                     style={{backgroundColor: '#f14e13'}}>
                                     <span className="text-white text-xl">🔧</span>
                                 </div>
-                                <h3 className="text-xl font-semibold mb-4" style={{ color: '#1a0e1c' }}>
+                                <h3 className="text-xl font-semibold mb-4" style={{color: '#1a0e1c'}}>
                                     {service.title}
                                 </h3>
                                 <p className="text-gray-600 font-light leading-relaxed">
@@ -232,24 +241,23 @@ const ElektroProLanding = () => {
                             <p style={{color: '#f5ece5'}} className="font-light">{currentContent.contact.location}</p>
                         </div>
                     </div>
-
-                    <a href={`mailto:elektroprointernational@gmail.com?subject=${currentContent.email.estimate.subject}`}>
-                        <button
-                            className="px-8 py-4 rounded-xl font-medium text-lg transition-all transform hover:scale-105 hover:shadow-lg"
-                            style={{backgroundColor: '#f14e13', color: '#f5ece5'}}
-                        >
-                            {currentContent.contact.cta}
-                        </button>
-                    </a>
+                    <button
+                        onClick={() => window.location.href = `mailto:elektroprointernational@gmail.com?subject=${currentContent.email.estimate.subject}`}
+                        className="px-8 py-4 rounded-xl font-medium text-lg transition-all transform hover:scale-105 hover:shadow-lg"
+                        style={{backgroundColor: '#f14e13', color: '#f5ece5'}}
+                    >
+                        {currentContent.contact.cta}
+                    </button>
                 </div>
             </section>
 
             {/* Footer */}
-            <footer className="py-8" style={{ backgroundColor: '#f5ece5' }}>
+            <footer className="py-8" style={{backgroundColor: '#f5ece5'}}>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <ElektroProLogo theme="light"  variant="full" size="h-14" className="mx-auto mb-4" />
-                    <p style={{ color: '#1a0e1c' }} className="font-light">
-                        © 2025 ElektroPro International. {language === 'hr' ? 'Sva prava pridržana.' : 'All rights reserved.'}
+                    <ElektroProLogo theme="light" variant="full" size="h-14" className="mx-auto mb-4"/>
+                    <p style={{color: '#1a0e1c'}} className="font-light">
+                        © 2025 ElektroPro
+                        International. {language === 'hr' ? 'Sva prava pridržana.' : 'All rights reserved.'}
                     </p>
                 </div>
             </footer>

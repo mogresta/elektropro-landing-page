@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Phone, Mail, MapPin, Zap, Shield, Clock, Leaf, Star, Menu, X } from 'lucide-react';
+import React, {useState} from 'react';
+import {Phone, Mail, MapPin, Zap, Shield, Clock, Leaf, Star, Menu, X} from 'lucide-react';
 import ElektroProLogo from '../Components/Logo';
 import translations from '../Translations/Translations';
 
@@ -13,27 +13,27 @@ const ElektroproLanding = () => {
         {
             title: currentContent.services.items[0].title,
             description: currentContent.services.items[0].description,
-            icon: <Zap className="w-8 h-8 text-accent" />
+            icon: <Zap className="w-8 h-8 text-accent"/>
         },
         {
             title: currentContent.services.items[1].title,
             description: currentContent.services.items[1].description,
-            icon: <Shield className="w-8 h-8 text-accent" />
+            icon: <Shield className="w-8 h-8 text-accent"/>
         },
         {
             title: currentContent.services.items[2].title,
             description: currentContent.services.items[2].description,
-            icon: <Clock className="w-8 h-8 text-accent" />
+            icon: <Clock className="w-8 h-8 text-accent"/>
         },
         {
             title: currentContent.services.items[3].title,
             description: currentContent.services.items[3].description,
-            icon: <Leaf className="w-8 h-8 text-accent" />
+            icon: <Leaf className="w-8 h-8 text-accent"/>
         },
         {
             title: currentContent.services.items[4].title,
             description: currentContent.services.items[4].description,
-            icon: <Star className="w-8 h-8 text-accent" />
+            icon: <Star className="w-8 h-8 text-accent"/>
         }
     ];
 
@@ -42,7 +42,7 @@ const ElektroproLanding = () => {
             {/* Navigation */}
             <nav className="bg-primary text-secondary p-4 sticky top-0 z-50">
                 <div className="container mx-auto flex justify-between items-center">
-                    <ElektroProLogo theme="dark" variant="full" size="h-10" />
+                    <ElektroProLogo theme="dark" variant="full" size="h-10"/>
 
                     {/* Desktop Menu */}
                     <div className="hidden md:flex items-center space-x-6">
@@ -114,7 +114,7 @@ const ElektroproLanding = () => {
             <section className="bg-gradient-to-r from-primary via-dark to-primary text-secondary py-20">
                 <div className="container mx-auto px-4 text-center">
                     <h1 className="text-5xl md:text-7xl font-bold mb-6">
-                         <div className="flex flex-col items-center mb-4">
+                        <div className="flex flex-col items-center mb-4">
                             <ElektroProLogo theme="dark" variant="emblem" size="h-20"/>
                         </div>
                         {currentContent.hero.title}
@@ -124,23 +124,22 @@ const ElektroproLanding = () => {
                     </p>
 
                     <div className="flex flex-col md:flex-row gap-4 justify-center">
-                        <a href={`mailto:elektroprointernational@gmail.com?subject=${currentContent.email.inquiry.subject}&body=${currentContent.email.inquiry.body}`}>
-                            <button
-                                className="bg-accent hover:bg-accent/90 text-secondary px-8 py-4 rounded-lg font-medium text-lg transition-all transform hover:scale-105">
-                                {currentContent.hero.cta1}
-                            </button>
-                        </a>
-                            <button
-                                className="border border-accent text-accent hover:bg-accent/20 px-8 py-4 rounded-lg font-medium text-lg transition-all">
-                                {currentContent.hero.cta2}
-                            </button>
+                        <button
+                            onClick={() => window.location.href = `mailto:elektroprointernational@gmail.com?subject=${currentContent.email.inquiry.subject}&body=${currentContent.email.inquiry.body}`}
+                            className="bg-accent hover:bg-accent/90 text-secondary px-8 py-4 rounded-lg font-medium text-lg transition-all transform hover:scale-105">
+                            {currentContent.hero.cta1}
+                        </button>
+                        <button
+                            className="border border-accent text-accent hover:bg-accent/20 px-8 py-4 rounded-lg font-medium text-lg transition-all">
+                            {currentContent.hero.cta2}
+                        </button>
                     </div>
                 </div>
             </section>
 
             {/* Why Choose Us */}
             <section className="py-16 bg-secondary">
-            <div className="container mx-auto px-4">
+                <div className="container mx-auto px-4">
                     <h2 className="text-4xl md:text-6xl font-bold text-primary text-center mb-12">
                         {currentContent.why.title}
                     </h2>
@@ -269,12 +268,11 @@ const ElektroproLanding = () => {
                             </div>
 
                             <div className="mt-8 text-center">
-                                <a href={`mailto:elektroprointernational@gmail.com?subject=${currentContent.email.inquiry.subject}&body=${currentContent.email.inquiry.body}`}>
-                                    <button
-                                        className="bg-accent hover:bg-accent/90 text-secondary px-8 py-4 rounded-lg font-medium text-lg transition-all transform hover:scale-105">
-                                        {currentContent.contact.cta}
-                                    </button>
-                                </a>
+                                <button
+                                    onClick={() => window.location.href = `mailto:elektroprointernational@gmail.com?subject=${currentContent.email.inquiry.subject}&body=${currentContent.email.inquiry.body}`}
+                                    className="bg-accent hover:bg-accent/90 text-secondary px-8 py-4 rounded-lg font-medium text-lg transition-all transform hover:scale-105">
+                                    {currentContent.contact.cta}
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -290,19 +288,18 @@ const ElektroproLanding = () => {
                     <p className="text-xl text-secondary/90 font-light mb-8">
                         {currentContent.finalCta.subtitle}
                     </p>
-                    <a href={`mailto:elektroprointernational@gmail.com?subject=${currentContent.email.estimate.subject}`}>
-                        <button
-                            className="bg-primary hover:bg-primary/90 text-secondary px-10 py-5 rounded-lg font-semibold text-xl transition-all transform hover:scale-105">
-                            {currentContent.finalCta.cta}
-                        </button>
-                    </a>
+                    <button
+                        onClick={() => window.location.href = `mailto:elektroprointernational@gmail.com?subject=${currentContent.email.estimate.subject}`}
+                        className="bg-primary hover:bg-primary/90 text-secondary px-10 py-5 rounded-lg font-semibold text-xl transition-all transform hover:scale-105">
+                        {currentContent.finalCta.cta}
+                    </button>
                 </div>
             </section>
 
             {/* Footer */}
             <footer className="bg-primary text-secondary py-8">
                 <div className="container mx-auto px-4 text-center">
-                    <ElektroProLogo theme="dark"  variant="full" size="h-14" className="mx-auto mb-4" />
+                    <ElektroProLogo theme="dark" variant="full" size="h-14" className="mx-auto mb-4"/>
                     <p className="text-secondary/80 font-light">
                         {currentContent.footer.rights}
                     </p>
