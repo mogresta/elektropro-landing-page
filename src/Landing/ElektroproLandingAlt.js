@@ -73,7 +73,7 @@ const ElektroproLanding = () => {
                 title: 'Kontaktirajte nas',
                 subtitle: 'Zatražite procjenu ili savjet!',
                 phone: '+385 97 7576180',
-                email: 'u izradi',
+                email: 'elektroprointernational@gmail.com',
                 location: 'Zagreb, radimo po cijeloj Hrvatskoj i EU',
                 cta: 'Pošaljite upit'
             },
@@ -150,7 +150,7 @@ const ElektroproLanding = () => {
                 title: 'Contact us',
                 subtitle: 'Request an assessment or advice!',
                 phone: '+385 97 7576180',
-                email: 'under development',
+                email: 'elektroprointernational@gmail.com',
                 location: 'Zagreb, we work throughout Croatia and EU',
                 cta: 'Send inquiry'
             },
