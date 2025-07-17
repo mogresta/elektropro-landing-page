@@ -1,169 +1,13 @@
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin, Zap, Shield, Clock, Leaf, Star, Menu, X } from 'lucide-react';
 import ElektroProLogo from '../Components/Logo';
+import translations from '../Translations/Translations';
 
 const ElektroproLanding = () => {
     const [language, setLanguage] = useState('hr');
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    const content = {
-        hr: {
-            nav: {
-                services: 'Usluge',
-                about: 'O nama',
-                contact: 'Kontakt'
-            },
-            hero: {
-                title: 'ElektroPro International',
-                subtitle: 'Vaš partner za moderne elektroinstalacije u Hrvatskoj i EU',
-                cta1: 'Zatražite procjenu',
-                cta2: 'Saznajte više'
-            },
-            why: {
-                title: 'Zašto odabrati ElektroPro?',
-                items: [
-                    'Višegodišnje iskustvo u Hrvatskoj i inozemstvu',
-                    'Kvaliteta, sigurnost i poštivanje rokova',
-                    'Energetski učinkovita i ekološka rješenja',
-                    'Fleksibilnost: od malih stanova do velikih industrijskih objekata'
-                ]
-            },
-            services: {
-                title: 'Naše usluge',
-                items: [
-                    {
-                        title: 'Elektroinstalacije jake struje',
-                        description: 'Projektiranje, izvedba i modernizacija instalacija u stambenim, poslovnim i industrijskim objektima'
-                    },
-                    {
-                        title: 'Slaba struja i pametne instalacije',
-                        description: 'Telekomunikacije, optičke mreže, video nadzor, alarmi, protupožarni sustavi, smart home'
-                    },
-                    {
-                        title: 'Rasvjeta i automatika',
-                        description: 'Unutarnja i vanjska rasvjeta, automatizacija objekata, štedljiva LED rješenja'
-                    },
-                    {
-                        title: 'Solarni paneli i obnovljivi izvori',
-                        description: 'Projektiranje i montaža solarnih sustava za kuće i poslovne objekte'
-                    },
-                    {
-                        title: 'Održavanje i hitne intervencije',
-                        description: 'Redovito i interventno održavanje, otklanjanje kvarova, nadogradnje sustava'
-                    }
-                ]
-            },
-            vision: {
-                title: 'Naša vizija',
-                text: 'ElektroPro International želi biti sinonim za dugotrajne, sigurne i ekološke elektroinstalacije. Naš cilj je graditi povjerenje, uvoditi inovacije i pružati podršku zajednici -- od modernih stanova do velikih industrijskih pogona.'
-            },
-            references: {
-                title: 'Reference i iskustvo',
-                countries: 'Projekti u zemljama:',
-                projects: 'Vrste projekata:',
-                projectList: [
-                    'Visokogradnja',
-                    'Industrijski objekti',
-                    'Poslovni objekti',
-                    'Solarne elektrane',
-                    'Pametni sustavi'
-                ]
-            },
-            contact: {
-                title: 'Kontaktirajte nas',
-                subtitle: 'Zatražite procjenu ili savjet!',
-                phone: '+385 97 7576180',
-                email: 'elektroprointernational@gmail.com',
-                location: 'Zagreb, radimo po cijeloj Hrvatskoj i EU',
-                cta: 'Pošaljite upit'
-            },
-            finalCta: {
-                title: 'Trebate sigurne, moderne i dugotrajne elektroinstalacije?',
-                subtitle: 'Kontaktirajte ElektroPro International danas!',
-                cta: 'Započnite projekt'
-            },
-            footer: 'Vaš partner za moderne elektroinstalacije u Hrvatskoj i EU'
-        },
-        en: {
-            nav: {
-                services: 'Services',
-                about: 'About',
-                contact: 'Contact'
-            },
-            hero: {
-                title: 'ElektroPro International',
-                subtitle: 'Your partner for modern electrical installations in Croatia and EU',
-                cta1: 'Request a quote',
-                cta2: 'Learn more'
-            },
-            why: {
-                title: 'Why choose ElektroPro?',
-                items: [
-                    'Years of experience in Croatia and abroad',
-                    'Quality, safety and deadline compliance',
-                    'Energy efficient and ecological solutions',
-                    'Flexibility: from small apartments to large industrial facilities'
-                ]
-            },
-            services: {
-                title: 'Our services',
-                items: [
-                    {
-                        title: 'High voltage electrical installations',
-                        description: 'Design, implementation and modernization of installations in residential, commercial and industrial buildings'
-                    },
-                    {
-                        title: 'Low voltage and smart installations',
-                        description: 'Telecommunications, fiber optic networks, video surveillance, alarms, fire protection systems, smart home'
-                    },
-                    {
-                        title: 'Lighting and automation',
-                        description: 'Indoor and outdoor lighting, building automation, energy-efficient LED solutions'
-                    },
-                    {
-                        title: 'Solar panels and renewable sources',
-                        description: 'Design and installation of solar systems for homes and commercial buildings'
-                    },
-                    {
-                        title: 'Maintenance and emergency interventions',
-                        description: 'Regular and emergency maintenance, fault elimination, system upgrades'
-                    }
-                ]
-            },
-            vision: {
-                title: 'Our vision',
-                text: 'ElektroPro International wants to be synonymous with long-lasting, safe and ecological electrical installations. Our goal is to build trust, introduce innovations and support the community -- from modern apartments to large industrial facilities.'
-            },
-            references: {
-                title: 'References and experience',
-                countries: 'Projects in countries:',
-                projects: 'Project types:',
-                projectList: [
-                    'High-rise construction',
-                    'Industrial facilities',
-                    'Commercial buildings',
-                    'Solar power plants',
-                    'Smart systems'
-                ]
-            },
-            contact: {
-                title: 'Contact us',
-                subtitle: 'Request an assessment or advice!',
-                phone: '+385 97 7576180',
-                email: 'elektroprointernational@gmail.com',
-                location: 'Zagreb, we work throughout Croatia and EU',
-                cta: 'Send inquiry'
-            },
-            finalCta: {
-                title: 'Need safe, modern and long-lasting electrical installations?',
-                subtitle: 'Contact ElektroPro International today!',
-                cta: 'Start project'
-            },
-            footer: 'Your partner for modern electrical installations in Croatia and EU'
-        }
-    };
-
-    const currentContent = content[language];
+    const currentContent = translations[language];
 
     const services = [
         {
@@ -191,10 +35,6 @@ const ElektroproLanding = () => {
             description: currentContent.services.items[4].description,
             icon: <Star className="w-8 h-8 text-accent" />
         }
-    ];
-
-    const countries = [
-        "Hrvatska", "Njemačka", "Nizozemska", "Belgija", "Luksemburg", "Italija"
     ];
 
     return (
@@ -284,21 +124,23 @@ const ElektroproLanding = () => {
                     </p>
 
                     <div className="flex flex-col md:flex-row gap-4 justify-center">
-                        <button
-                            className="bg-accent hover:bg-accent/90 text-secondary px-8 py-4 rounded-lg font-medium text-lg transition-all transform hover:scale-105">
-                            {currentContent.hero.cta1}
-                        </button>
-                        <button
-                            className="border border-accent text-accent hover:bg-accent/20 px-8 py-4 rounded-lg font-medium text-lg transition-all">
-                            {currentContent.hero.cta2}
-                        </button>
+                        <a href={`mailto:elektroprointernational@gmail.com?subject=${currentContent.email.inquiry.subject}&body=${currentContent.email.inquiry.body}`}>
+                            <button
+                                className="bg-accent hover:bg-accent/90 text-secondary px-8 py-4 rounded-lg font-medium text-lg transition-all transform hover:scale-105">
+                                {currentContent.hero.cta1}
+                            </button>
+                        </a>
+                            <button
+                                className="border border-accent text-accent hover:bg-accent/20 px-8 py-4 rounded-lg font-medium text-lg transition-all">
+                                {currentContent.hero.cta2}
+                            </button>
                     </div>
                 </div>
             </section>
 
             {/* Why Choose Us */}
             <section className="py-16 bg-secondary">
-                <div className="container mx-auto px-4">
+            <div className="container mx-auto px-4">
                     <h2 className="text-4xl md:text-6xl font-bold text-primary text-center mb-12">
                         {currentContent.why.title}
                     </h2>
@@ -371,9 +213,9 @@ const ElektroproLanding = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
                         <div className="text-secondary">
-                            <h3 className="text-2xl font-semibold mb-6 text-center">{currentContent.references.countries}</h3>
+                            <h3 className="text-2xl font-semibold mb-6 text-center">{currentContent.experience.projectCountries}</h3>
                             <div className="grid grid-cols-2 gap-4">
-                                {countries.map((country, index) => (
+                                {currentContent.experience.countries.map((country, index) => (
                                     <div key={index} className="bg-neutral/20 p-3 rounded-lg text-center">
                                         <span className="font-medium">{country}</span>
                                     </div>
@@ -382,9 +224,9 @@ const ElektroproLanding = () => {
                         </div>
 
                         <div className="text-secondary">
-                            <h3 className="text-2xl font-semibold mb-6 text-center">{currentContent.references.projects}</h3>
+                            <h3 className="text-2xl font-semibold mb-6 text-center">{currentContent.experience.projects}</h3>
                             <ul className="space-y-3 font-light max-w-xs mx-auto">
-                                {currentContent.references.projectList.map((project, index) => (
+                                {currentContent.experience.projectList.map((project, index) => (
                                     <li key={index} className="flex items-center">
                                         <Star className="w-5 h-5 text-accent mr-3"/>
                                         {project}
@@ -427,10 +269,12 @@ const ElektroproLanding = () => {
                             </div>
 
                             <div className="mt-8 text-center">
-                                <button
-                                    className="bg-accent hover:bg-accent/90 text-secondary px-8 py-4 rounded-lg font-medium text-lg transition-all transform hover:scale-105">
-                                    {currentContent.contact.cta}
-                                </button>
+                                <a href={`mailto:elektroprointernational@gmail.com?subject=${currentContent.email.inquiry.subject}&body=${currentContent.email.inquiry.body}`}>
+                                    <button
+                                        className="bg-accent hover:bg-accent/90 text-secondary px-8 py-4 rounded-lg font-medium text-lg transition-all transform hover:scale-105">
+                                        {currentContent.contact.cta}
+                                    </button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -446,10 +290,12 @@ const ElektroproLanding = () => {
                     <p className="text-xl text-secondary/90 font-light mb-8">
                         {currentContent.finalCta.subtitle}
                     </p>
-                    <button
-                        className="bg-primary hover:bg-primary/90 text-secondary px-10 py-5 rounded-lg font-semibold text-xl transition-all transform hover:scale-105">
-                        {currentContent.finalCta.cta}
-                    </button>
+                    <a href={`mailto:elektroprointernational@gmail.com?subject=${currentContent.email.estimate.subject}`}>
+                        <button
+                            className="bg-primary hover:bg-primary/90 text-secondary px-10 py-5 rounded-lg font-semibold text-xl transition-all transform hover:scale-105">
+                            {currentContent.finalCta.cta}
+                        </button>
+                    </a>
                 </div>
             </section>
 
@@ -458,7 +304,7 @@ const ElektroproLanding = () => {
                 <div className="container mx-auto px-4 text-center">
                     <ElektroProLogo theme="dark"  variant="full" size="h-14" className="mx-auto mb-4" />
                     <p className="text-secondary/80 font-light">
-                        {currentContent.footer}
+                        {currentContent.footer.rights}
                     </p>
                 </div>
             </footer>

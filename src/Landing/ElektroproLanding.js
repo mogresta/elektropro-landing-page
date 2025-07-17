@@ -1,148 +1,12 @@
 import React, { useState } from 'react';
 import ElektroProLogo from '../Components/Logo';
+import translations from '../Translations/Translations';
 
 const ElektroProLanding = () => {
     const [language, setLanguage] = useState('hr');
 
     // Language content
-    const content = {
-        hr: {
-            nav: {
-                services: 'Usluge',
-                about: 'O nama',
-                contact: 'Kontakt'
-            },
-            hero: {
-                title: 'ElektroPro International',
-                subtitle: 'Vaš partner za moderne elektroinstalacije u Hrvatskoj i EU',
-                cta: 'Zatražite procjenu'
-            },
-            why: {
-                title: 'Zašto odabrati ElektroPro International?',
-                items: [
-                    'Višegodišnje iskustvo u Hrvatskoj i inozemstvu',
-                    'Kvaliteta, sigurnost i poštivanje rokova',
-                    'Energetski učinkovita i ekološka rješenja',
-                    'Fleksibilnost: od malih stanova do velikih industrijskih objekata'
-                ]
-            },
-            services: {
-                title: 'Naše usluge',
-                items: [
-                    {
-                        title: 'Elektroinstalacije jake struje',
-                        description: 'Projektiranje, izvedba i modernizacija instalacija u stambenim, poslovnim i industrijskim objektima'
-                    },
-                    {
-                        title: 'Slaba struja i pametne instalacije',
-                        description: 'Telekomunikacije, optičke mreže, video nadzor, alarmi, protupožarni sustavi, smart home'
-                    },
-                    {
-                        title: 'Rasvjeta i automatika',
-                        description: 'Unutarnja i vanjska rasvjeta, automatizacija objekata, štedljiva LED rješenja'
-                    },
-                    {
-                        title: 'Solarni paneli i obnovljivi izvori',
-                        description: 'Projektiranje i montaža solarnih sustava za kuće i poslovne objekte'
-                    },
-                    {
-                        title: 'Održavanje i hitne intervencije',
-                        description: 'Redovito i interventno održavanje, otklanjanje kvarova, nadogradnje sustava'
-                    }
-                ]
-            },
-            vision: {
-                title: 'Naša vizija',
-                text: 'ElektroPro International želi biti sinonim za dugotrajne, sigurne i ekološke elektroinstalacije. Naš cilj je graditi povjerenje, uvoditi inovacije i pružati podršku zajednici.'
-            },
-            experience: {
-                title: 'Reference i iskustvo',
-                items: [
-                    'Projekti u Hrvatskoj, Njemačkoj, Nizozemskoj, Belgiji, Luksemburgu, Italiji',
-                    'Rad na visokogradnji, industrijskim i poslovnim objektima',
-                    'Solarni elektrane i pametni sustavi',
-                    'Suradnja s renomiranim partnerima i tvrtkama'
-                ]
-            },
-            contact: {
-                title: 'Kontaktirajte nas',
-                subtitle: 'Zatražite procjenu ili savjet!',
-                phone: '+385 97 7576180',
-                email: 'elektroprointernational@gmail.com',
-                location: 'Zagreb, radimo po cijeloj Hrvatskoj i EU',
-                cta: 'Kontaktirajte ElektroPro International danas!'
-            }
-        },
-        en: {
-            nav: {
-                services: 'Services',
-                about: 'About',
-                contact: 'Contact'
-            },
-            hero: {
-                title: 'ElektroPro International',
-                subtitle: 'Your partner for modern electrical installations in Croatia and EU',
-                cta: 'Request a quote'
-            },
-            why: {
-                title: 'Why choose ElektroPro International?',
-                items: [
-                    'Years of experience in Croatia and abroad',
-                    'Quality, safety and deadline compliance',
-                    'Energy efficient and ecological solutions',
-                    'Flexibility: from small apartments to large industrial facilities'
-                ]
-            },
-            services: {
-                title: 'Our services',
-                items: [
-                    {
-                        title: 'High voltage electrical installations',
-                        description: 'Design, implementation and modernization of installations in residential, commercial and industrial buildings'
-                    },
-                    {
-                        title: 'Low voltage and smart installations',
-                        description: 'Telecommunications, fiber optic networks, video surveillance, alarms, fire protection systems, smart home'
-                    },
-                    {
-                        title: 'Lighting and automation',
-                        description: 'Indoor and outdoor lighting, building automation, energy-efficient LED solutions'
-                    },
-                    {
-                        title: 'Solar panels and renewable sources',
-                        description: 'Design and installation of solar systems for homes and commercial buildings'
-                    },
-                    {
-                        title: 'Maintenance and emergency interventions',
-                        description: 'Regular and emergency maintenance, fault elimination, system upgrades'
-                    }
-                ]
-            },
-            vision: {
-                title: 'Our vision',
-                text: 'ElektroPro International wants to be synonymous with long-lasting, safe and ecological electrical installations. Our goal is to build trust, introduce innovations and support the community.'
-            },
-            experience: {
-                title: 'References and experience',
-                items: [
-                    'Projects in Croatia, Germany, Netherlands, Belgium, Luxembourg, Italy',
-                    'Work on high-rise buildings, industrial and commercial facilities',
-                    'Solar power plants and smart systems',
-                    'Cooperation with renowned partners and companies'
-                ]
-            },
-            contact: {
-                title: 'Contact us',
-                subtitle: 'Request an assessment or advice!',
-                phone: '+385 97 7576180',
-                email: 'elektroprointernational@gmail.com',
-                location: 'Zagreb, we work throughout Croatia and EU',
-                cta: 'Contact ElektroPro International today!'
-            }
-        }
-    };
-
-    const currentContent = content[language];
+    const currentContent = translations[language];
 
     return (
         <div className="min-h-screen bg-white" style={{ fontFamily: 'Barlow, sans-serif' }}>
@@ -217,12 +81,14 @@ const ElektroProLanding = () => {
                             <p className="text-xl lg:text-2xl mb-8 font-light" style={{color: '#1a0e1c'}}>
                                 {currentContent.hero.subtitle}
                             </p>
-                            <button
-                                className="px-8 py-4 rounded-xl text-white font-medium text-lg transition-all transform hover:scale-105 hover:shadow-lg"
-                                style={{backgroundColor: '#f14e13'}}
-                            >
-                                {currentContent.hero.cta}
-                            </button>
+                            <a href={`mailto:elektroprointernational@gmail.com?subject=${currentContent.email.inquiry.subject}&body=${currentContent.email.inquiry.body}`}>
+                                <button
+                                    className="px-8 py-4 rounded-xl text-white font-medium text-lg transition-all transform hover:scale-105 hover:shadow-lg"
+                                    style={{backgroundColor: '#f14e13'}}
+                                >
+                                    {currentContent.hero.cta}
+                                </button>
+                            </a>
                         </div>
                         <div className="relative overflow-hidden">
                             <img
@@ -337,39 +203,44 @@ const ElektroProLanding = () => {
             <section id="contact" className="py-20" style={{backgroundColor: '#1a0e1c'}}>
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h2 className="text-4xl lg:text-5xl font-bold mb-4" style={{color: '#f5ece5'}}>
-                    {currentContent.contact.title}
+                        {currentContent.contact.title}
                     </h2>
-                    <p className="text-xl mb-12" style={{ color: '#b5cbc8' }}>
+                    <p className="text-xl mb-12" style={{color: '#b5cbc8'}}>
                         {currentContent.contact.subtitle}
                     </p>
 
                     <div className="grid md:grid-cols-3 gap-8 mb-12">
                         <div className="text-center">
-                            <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style={{ backgroundColor: '#f14e13' }}>
+                            <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center"
+                                 style={{backgroundColor: '#f14e13'}}>
                                 <span className="text-2xl text-white">📞</span>
                             </div>
-                            <p style={{ color: '#f5ece5' }} className="font-light">{currentContent.contact.phone}</p>
+                            <p style={{color: '#f5ece5'}} className="font-light">{currentContent.contact.phone}</p>
                         </div>
                         <div className="text-center">
-                            <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style={{ backgroundColor: '#f14e13' }}>
+                            <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center"
+                                 style={{backgroundColor: '#f14e13'}}>
                                 <span className="text-2xl text-white">✉️</span>
                             </div>
-                            <p style={{ color: '#f5ece5' }} className="font-light">{currentContent.contact.email}</p>
+                            <p style={{color: '#f5ece5'}} className="font-light">{currentContent.contact.email}</p>
                         </div>
                         <div className="text-center">
-                            <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style={{ backgroundColor: '#f14e13' }}>
+                            <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center"
+                                 style={{backgroundColor: '#f14e13'}}>
                                 <span className="text-2xl text-white">📍</span>
                             </div>
-                            <p style={{ color: '#f5ece5' }} className="font-light">{currentContent.contact.location}</p>
+                            <p style={{color: '#f5ece5'}} className="font-light">{currentContent.contact.location}</p>
                         </div>
                     </div>
 
-                    <button
-                        className="px-8 py-4 rounded-xl font-medium text-lg transition-all transform hover:scale-105 hover:shadow-lg"
-                        style={{ backgroundColor: '#f14e13', color: '#f5ece5' }}
-                    >
-                        {currentContent.contact.cta}
-                    </button>
+                    <a href={`mailto:elektroprointernational@gmail.com?subject=${currentContent.email.estimate.subject}`}>
+                        <button
+                            className="px-8 py-4 rounded-xl font-medium text-lg transition-all transform hover:scale-105 hover:shadow-lg"
+                            style={{backgroundColor: '#f14e13', color: '#f5ece5'}}
+                        >
+                            {currentContent.contact.cta}
+                        </button>
+                    </a>
                 </div>
             </section>
 
