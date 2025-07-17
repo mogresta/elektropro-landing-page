@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {Phone, Mail, MapPin, Zap, Shield, Clock, Leaf, Star, Menu, X} from 'lucide-react';
 import ElektroProLogo from '../Components/Logo';
 import translations from '../Translations/Translations';
+import {scrollToCenter} from '../Utils/scrollUtils';
 
 const ElektroproLanding = () => {
     const [language, setLanguage] = useState('hr');
@@ -46,11 +47,16 @@ const ElektroproLanding = () => {
 
                     {/* Desktop Menu */}
                     <div className="hidden md:flex items-center space-x-6">
-                        <a href="#services"
-                           className="hover:text-accent transition-colors">{currentContent.nav.services}</a>
-                        <a href="#reference" className="hover:text-accent transition-colors">Reference</a>
-                        <a href="#contact"
-                           className="hover:text-accent transition-colors">{currentContent.nav.contact}</a>
+                        <button
+                            onClick={() => scrollToCenter('services')}
+                            className="hover:text-accent transition-colors">{currentContent.nav.services}</button>
+                        <button
+                            onClick={() => scrollToCenter('reference')}
+                            className="hover:text-accent transition-colors">Reference
+                        </button>
+                        <button
+                            onClick={() => scrollToCenter('contact')}
+                            className="hover:text-accent transition-colors">{currentContent.nav.contact}</button>
                         <div className="flex items-center space-x-2 ml-4">
                             <button
                                 onClick={() => setLanguage('hr')}
@@ -83,11 +89,16 @@ const ElektroproLanding = () => {
                 {/* Mobile Menu */}
                 {isMenuOpen && (
                     <div className="md:hidden mt-4 space-y-2">
-                        <a href="#services"
-                           className="block py-2 hover:text-accent transition-colors">{currentContent.nav.services}</a>
-                        <a href="#reference" className="block py-2 hover:text-accent transition-colors">Reference</a>
-                        <a href="#contact"
-                           className="block py-2 hover:text-accent transition-colors">{currentContent.nav.contact}</a>
+                        <button
+                            onClick={() => scrollToCenter('services')}
+                            className="block py-2 hover:text-accent transition-colors">{currentContent.nav.services}</button>
+                        <button
+                            onClick={() => scrollToCenter('reference')}
+                            className="block py-2 hover:text-accent transition-colors">Reference
+                        </button>
+                        <button
+                            onClick={() => scrollToCenter('contact')}
+                            className="block py-2 hover:text-accent transition-colors">{currentContent.nav.contact}</button>
                         <div className="flex items-center space-x-2 mt-4">
                             <button
                                 onClick={() => setLanguage('hr')}
@@ -130,6 +141,7 @@ const ElektroproLanding = () => {
                             {currentContent.hero.cta1}
                         </button>
                         <button
+                            onClick={() => scrollToCenter('reference')}
                             className="border border-accent text-accent hover:bg-accent/20 px-8 py-4 rounded-lg font-medium text-lg transition-all">
                             {currentContent.hero.cta2}
                         </button>

@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import ElektroProLogo from '../Components/Logo';
 import translations from '../Translations/Translations';
+import {scrollToCenter} from '../Utils/scrollUtils';
 
 const ElektroProLanding = () => {
     const [language, setLanguage] = useState('hr');
@@ -23,18 +24,21 @@ const ElektroProLanding = () => {
                             <ElektroProLogo theme="light" variant="full" size="h-8"/>
                         </div>
                         <div className="hidden md:flex items-center space-x-8">
-                            <a href="#services"
-                               className="text-gray-700 hover:text-orange-500 transition-colors font-medium">
+                            <button
+                                onClick={() => scrollToCenter('services')}
+                                className="text-gray-700 hover:text-orange-500 transition-colors font-medium">
                                 {currentContent.nav.services}
-                            </a>
-                            <a href="#about"
-                               className="text-gray-700 hover:text-orange-500 transition-colors font-medium">
+                            </button>
+                            <button
+                                onClick={() => scrollToCenter('about')}
+                                className="text-gray-700 hover:text-orange-500 transition-colors font-medium">
                                 {currentContent.nav.about}
-                            </a>
-                            <a href="#contact"
-                               className="text-gray-700 hover:text-orange-500 transition-colors font-medium">
+                            </button>
+                            <button
+                                onClick={() => scrollToCenter('contact')}
+                                className="text-gray-700 hover:text-orange-500 transition-colors font-medium">
                                 {currentContent.nav.contact}
-                            </a>
+                            </button>
                             <div className="flex items-center space-x-2">
                                 <button
                                     onClick={() => setLanguage('hr')}
