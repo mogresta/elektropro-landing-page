@@ -98,7 +98,14 @@ const ElektroProLanding = () => {
                                 {currentContent.hero.cta}
                             </button>
                         </div>
-                        <div className="relative overflow-hidden">
+                        <div className="lg:hidden">
+                            <img
+                                src="/images/SolarniPaneli.jpeg"
+                                alt="Solar installation"
+                                className="rounded-xl shadow-lg w-full h-96 object-cover"
+                            />
+                        </div>
+                        <div className="hidden lg:block relative overflow-hidden">
                             <img
                                 src="/images/SolarniPaneli.jpeg"
                                 alt="Solar installation"
@@ -113,7 +120,7 @@ const ElektroProLanding = () => {
             <section className="py-20" style={{backgroundColor: '#f5ece5'}}>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <h2 className="text-4xl lg:text-5xl font-bold text-center mb-16" style={{color: '#1a0e1c'}}>
-                        {currentContent.why.title}
+                    {currentContent.why.title}
                     </h2>
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {currentContent.why.items.map((item, index) => (
