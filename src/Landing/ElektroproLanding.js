@@ -15,7 +15,7 @@ const ElektroProLanding = () => {
             hero: {
                 title: 'ElektroPro International',
                 subtitle: 'Vaš partner za moderne elektroinstalacije u Hrvatskoj i EU',
-                cta: 'Zatražite besplatnu procjenu'
+                cta: 'Zatražite procjenu'
             },
             why: {
                 title: 'Zašto odabrati ElektroPro International?',
@@ -66,7 +66,7 @@ const ElektroProLanding = () => {
             },
             contact: {
                 title: 'Kontaktirajte nas',
-                subtitle: 'Zatražite besplatnu procjenu ili savjet!',
+                subtitle: 'Zatražite procjenu ili savjet!',
                 phone: '+385 97 7576180',
                 email: 'u izradi',
                 location: 'Zagreb, radimo po cijeloj Hrvatskoj i EU',
@@ -82,7 +82,7 @@ const ElektroProLanding = () => {
             hero: {
                 title: 'ElektroPro International',
                 subtitle: 'Your partner for modern electrical installations in Croatia and EU',
-                cta: 'Request free quote'
+                cta: 'Request a quote'
             },
             why: {
                 title: 'Why choose ElektroPro International?',
@@ -133,7 +133,7 @@ const ElektroProLanding = () => {
             },
             contact: {
                 title: 'Contact us',
-                subtitle: 'Request a free assessment or advice!',
+                subtitle: 'Request an assessment or advice!',
                 phone: '+385 97 7576180',
                 email: 'under development',
                 location: 'Zagreb, we work throughout Croatia and EU',
